@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 - 你的名字</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1f1c2c, #928dab);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent-color: #6c63ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--primary-gradient);
+            color: white;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding-top: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .timeline {
+            color: #ccc;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a href="#education"><i class="fas fa-graduation-cap"></i> 教育经历</a>
+            <a href="#work"><i class="fas fa-briefcase"></i> 工作经历</a>
+            <a href="#interest"><i class="fas fa-gamepad"></i> 兴趣爱好</a>
+            <a href="#other"><i class="fas fa-ellipsis-h"></i> 其他信息</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 教育经历 -->
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> 教育经历</h2>
+            <div class="card">
+                <div class="timeline">2018 - 2022</div>
+                <h3>XX大学 计算机科学 学士学位</h3>
+                <p>主修课程：数据结构与算法、人工智能基础、Web开发</p>
+            </div>
+        </section>
+
+        <!-- 工作经历 -->
+        <section id="work">
+            <h2><i class="fas fa-briefcase"></i> 工作经历</h2>
+            <div class="card">
+                <div class="timeline">2022 - 至今</div>
+                <h3>XX科技公司 前端开发工程师</h3>
+                <ul>
+                    <li>负责企业级Web应用开发</li>
+                    <li>使用React和Vue框架构建响应式界面</li>
+                    <li>优化页面性能提升30%加载速度</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 兴趣爱好 -->
+        <section id="interest">
+            <h2><i class="fas fa-gamepad"></i> 兴趣爱好</h2>
+            <div class="card">
+                <h3>技术探索</h3>
+                <p>持续学习Web3和AI前沿技术，参与开源项目开发</p>
+            </div>
+            <div class="card">
+                <h3>摄影创作</h3>
+                <p>擅长城市风光和人像摄影，作品曾在本地展览展出</p>
+            </div>
+        </section>
+
+        <!-- 其他信息 -->
+        <section id="other">
+            <h2><i class="fas fa-ellipsis-h"></i> 其他信息</h2>
+            <div class="card">
+                <h3>语言能力</h3>
+                <ul>
+                    <li>中文 - 母语</li>
+                    <li>英语 - 雅思7.5，流利口语</li>
+                </ul>
+            </div>
+            <div class="card contact">
+                <h3>联系方式</h3>
+                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> your@email.com</a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
