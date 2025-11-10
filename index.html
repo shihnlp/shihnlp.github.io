@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #f8f8f8;
+            --bg: #f8f8f8;
+            --text: #1a1a1a;
             --accent: #ffd700;
-            --border-color: #2a2a2a;
+            --muted: #666;
+            --card-bg: #fff;
+            --border: #e0e0e0;
         }
 
         * {
@@ -21,16 +23,18 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg);
+            color: var(--text);
             font-family: 'Inter', sans-serif;
-            padding: 3rem 1.5rem;
-            line-height: 1.8;
+            padding: 3rem 1rem;
         }
 
         header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .nav {
@@ -38,41 +42,52 @@
             justify-content: center;
             gap: 2.5rem;
             flex-wrap: wrap;
-            padding: 1rem 0;
+            margin-top: 1.5rem;
         }
 
         .nav a {
-            color: var(--text-color);
+            color: var(--text);
             text-decoration: none;
             font-weight: 400;
             position: relative;
             transition: color 0.3s;
             font-size: 0.95rem;
             letter-spacing: 0.03em;
+            padding-bottom: 0.3rem;
         }
 
-        .nav a:hover::after {
+        .nav a:hover {
+            color: var(--accent);
+        }
+
+        .nav a::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -4px;
-            width: 100%;
+            bottom: 0;
+            width: 0;
             height: 2px;
             background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
         }
 
         section {
             max-width: 800px;
             margin: 0 auto 4rem;
+            padding: 0 1rem;
         }
 
         h2 {
             font-weight: 500;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--accent);
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border);
             padding-bottom: 0.5rem;
         }
 
@@ -81,29 +96,37 @@
         }
 
         .time {
-            color: #888;
+            color: var(--muted);
             font-size: 0.85rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         h3 {
-            font-size: 1.1rem;
-            font-weight: 400;
+            font-size: 1.05rem;
+            font-weight: 500;
             margin-bottom: 0.5rem;
         }
 
         p, ul {
             font-size: 0.9rem;
-            color: #ddd;
+            color: var(--muted);
             margin-bottom: 0.8rem;
         }
 
         ul {
-            padding-left: 1rem;
+            padding-left: 1.2rem;
         }
 
         li {
             margin-bottom: 0.4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
         }
 
         .contact {
@@ -113,7 +136,7 @@
         }
 
         .contact a {
-            color: var(--text-color);
+            color: var(--text);
             text-decoration: none;
             font-size: 0.9rem;
             display: flex;
@@ -132,7 +155,7 @@
             }
             
             h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .time {
@@ -143,8 +166,8 @@
 </head>
 <body>
     <header>
-        <h1 style="margin-bottom: 0.5rem; font-size: 1.8rem;">Your Name</h1>
-        <p style="color: #777; font-size: 0.9rem;">Frontend Developer | Tech Enthusiast</p>
+        <h1 style="margin-bottom: 0.5rem; font-size: 1.8rem; color: var(--text);">Your Name</h1>
+        <p style="color: var(--muted); font-size: 0.95rem;">Frontend Developer | Design Systems Advocate</p>
         <nav class="nav">
             <a href="#education">Education</a>
             <a href="#work">Work</a>
@@ -155,56 +178,68 @@
 
     <section id="education">
         <h2>🎓 Education</h2>
-        <div class="item">
-            <div class="time">2018 - 2022</div>
-            <h3>XX University - Computer Science</h3>
-            <p>Bachelor Degree in Computer Science with honors</p>
-            <ul>
-                <li>Relevant Coursework: Data Structures, AI Fundamentals</li>
-                <li>GPA: 3.8/4.0</li>
-            </ul>
+        <div class="card">
+            <div class="item">
+                <div class="time">2018 - 2022</div>
+                <h3>XX University - Computer Science</h3>
+                <p>Bachelor Degree in Computer Science with honors</p>
+                <ul>
+                    <li>Relevant Coursework: Data Structures, AI Fundamentals, Web Development</li>
+                    <li>GPA: 3.8/4.0</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section id="work">
         <h2>💼 Work Experience</h2>
-        <div class="item">
-            <div class="time">2022 - Present</div>
-            <h3>Senior Frontend Engineer @ TechNova</h3>
-            <ul>
-                <li>Lead development of 5+ enterprise-grade web applications</li>
-                <li>Architectural design of React/Vue-based component systems</li>
-                <li>Performance optimization reducing LCP by 40%</li>
-            </ul>
+        <div class="card">
+            <div class="item">
+                <div class="time">2022 - Present</div>
+                <h3>Senior Frontend Engineer @ TechNova</h3>
+                <ul>
+                    <li>Lead development of 5+ enterprise-grade web applications</li>
+                    <li>Architectural design of React/Vue-based component systems</li>
+                    <li>Performance optimization reducing LCP by 40%</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section id="interest">
         <h2>🔍 Interests</h2>
-        <div class="item">
-            <h3>Modern Web Architecture</h3>
-            <p>Researching Next.js architecture patterns and Rust-based frontend tools</p>
+        <div class="card">
+            <div class="item">
+                <h3>Modern Web Architecture</h3>
+                <p>Researching Next.js architecture patterns and Rust-based frontend tools</p>
+            </div>
         </div>
-        <div class="item">
-            <h3>Product Design</h3>
-            <p>Studying Figma and design systems implementation</p>
+        <div class="card">
+            <div class="item">
+                <h3>Product Design</h3>
+                <p>Studying Figma and design systems implementation</p>
+            </div>
         </div>
     </section>
 
     <section id="other">
         <h2>📌 More</h2>
-        <div class="item">
-            <h3>Languages</h3>
-            <ul>
-                <li>Chinese - Native</li>
-                <li>English - Professional working proficiency</li>
-            </ul>
+        <div class="card">
+            <div class="item">
+                <h3>Languages</h3>
+                <ul>
+                    <li>Chinese - Native</li>
+                    <li>English - Professional working proficiency</li>
+                </ul>
+            </div>
         </div>
-        <div class="item contact">
-            <h3>Contact</h3>
-            <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> your@email.com</a>
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <div class="card">
+            <div class="item contact">
+                <h3>Contact</h3>
+                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> your@email.com</a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
         </div>
     </section>
 </body>
