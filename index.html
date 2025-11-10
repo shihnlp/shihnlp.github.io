@@ -12,7 +12,6 @@
             --text: #1a1a1a;
             --accent: #ffd700;
             --muted: #666;
-            --card-bg: #fff;
             --border: #e0e0e0;
         }
 
@@ -43,6 +42,7 @@
             gap: 2.5rem;
             flex-wrap: wrap;
             margin-top: 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .nav a {
@@ -53,7 +53,7 @@
             transition: color 0.3s;
             font-size: 0.95rem;
             letter-spacing: 0.03em;
-            padding-bottom: 0.3rem;
+            padding: 1rem 0;
         }
 
         .nav a:hover {
@@ -121,14 +121,6 @@
             margin-bottom: 0.4rem;
         }
 
-        .card {
-            background: var(--card-bg);
-            padding: 1.8rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
-        }
-
         .contact {
             display: flex;
             flex-wrap: wrap;
@@ -178,68 +170,56 @@
 
     <section id="education">
         <h2>🎓 Education</h2>
-        <div class="card">
-            <div class="item">
-                <div class="time">2018 - 2022</div>
-                <h3>XX University - Computer Science</h3>
-                <p>Bachelor Degree in Computer Science with honors</p>
-                <ul>
-                    <li>Relevant Coursework: Data Structures, AI Fundamentals, Web Development</li>
-                    <li>GPA: 3.8/4.0</li>
-                </ul>
-            </div>
+        <div class="item">
+            <div class="time">2018 - 2022</div>
+            <h3>XX University - Computer Science</h3>
+            <p>Bachelor Degree in Computer Science with honors</p>
+            <ul>
+                <li>Relevant Coursework: Data Structures, AI Fundamentals, Web Development</li>
+                <li>GPA: 3.8/4.0</li>
+            </ul>
         </div>
     </section>
 
     <section id="work">
         <h2>💼 Work Experience</h2>
-        <div class="card">
-            <div class="item">
-                <div class="time">2022 - Present</div>
-                <h3>Senior Frontend Engineer @ TechNova</h3>
-                <ul>
-                    <li>Lead development of 5+ enterprise-grade web applications</li>
-                    <li>Architectural design of React/Vue-based component systems</li>
-                    <li>Performance optimization reducing LCP by 40%</li>
-                </ul>
-            </div>
+        <div class="item">
+            <div class="time">2022 - Present</div>
+            <h3>Senior Frontend Engineer @ TechNova</h3>
+            <ul>
+                <li>Lead development of 5+ enterprise-grade web applications</li>
+                <li>Architectural design of React/Vue-based component systems</li>
+                <li>Performance optimization reducing LCP by 40%</li>
+            </ul>
         </div>
     </section>
 
     <section id="interest">
         <h2>🔍 Interests</h2>
-        <div class="card">
-            <div class="item">
-                <h3>Modern Web Architecture</h3>
-                <p>Researching Next.js architecture patterns and Rust-based frontend tools</p>
-            </div>
+        <div class="item">
+            <h3>Modern Web Architecture</h3>
+            <p>Researching Next.js architecture patterns and Rust-based frontend tools</p>
         </div>
-        <div class="card">
-            <div class="item">
-                <h3>Product Design</h3>
-                <p>Studying Figma and design systems implementation</p>
-            </div>
+        <div class="item">
+            <h3>Product Design</h3>
+            <p>Studying Figma and design systems implementation</p>
         </div>
     </section>
 
     <section id="other">
         <h2>📌 More</h2>
-        <div class="card">
-            <div class="item">
-                <h3>Languages</h3>
-                <ul>
-                    <li>Chinese - Native</li>
-                    <li>English - Professional working proficiency</li>
-                </ul>
-            </div>
+        <div class="item">
+            <h3>Languages</h3>
+            <ul>
+                <li>Chinese - Native</li>
+                <li>English - Professional working proficiency</li>
+            </ul>
         </div>
-        <div class="card">
-            <div class="item contact">
-                <h3>Contact</h3>
-                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> your@email.com</a>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
+        <div class="item contact">
+            <h3>Contact</h3>
+            <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> your@email.com</a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
     </section>
 </body>
